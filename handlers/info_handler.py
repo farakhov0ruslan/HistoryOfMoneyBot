@@ -1,3 +1,4 @@
+import asyncio
 from aiogram import types
 from sqlalchemy import select
 from sqlalchemy.orm import selectinload
@@ -26,6 +27,7 @@ class InfoHandler:
                         elif item.type == "image":
                             await bot.send_photo(chat_id=message.chat.id,
                                                  photo=InputFile(item.content))
+                        await asyncio.sleep(0.4)
                 else:
                     await message.answer("Информация не найдена или повреждена.")
             except Exception as e:
