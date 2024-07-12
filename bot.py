@@ -1,11 +1,9 @@
-import asyncio
-
 from aiogram.utils import executor
 from create_bot import dp
 from database.engine import create_db
-from handlers import client
+from handlers import app
 
-client.register_handlers_client(dp)
+app.register_handlers_client(dp)
 
 
 async def on_startup(_):
